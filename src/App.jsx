@@ -1,6 +1,6 @@
 import "./index.css";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import hero from "./components/hero";
 import Features from "./components/Features";
 import Camera from "./components/Camera";
 
