@@ -1,12 +1,40 @@
+import { useRef, useState } from "react";
+
 function Camera() {
+  const videoRef = useRef(null);
+  const [active, setActive] = useState(false);
+
+  const startCamera = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+      });
+
+      videoRef.current.srcObject = stream;
+      setActive(true);
+
+    } catch (error) {
+      alert("Camera permission denied");
+    }
+  };
+
   return (
-    <section className="camera">
-      <h2>📷 Camera</h2>
+    <div className="camera">
+      <h2>Camera Module</h2>
 
-      <p>Click the button below to start the camera.</p>
+      <video
+        ref={videoRef}
+        autoPlay
+        playsInline
+        width="320"
+      ></video>
 
-      <button>Start Camera</button>
-    </section>
+      <br />
+
+      <button onClick={startCamera}>
+        {active ? "Camera Running" : "Start Camera"}
+      </button>
+    </div>
   );
 }
 
