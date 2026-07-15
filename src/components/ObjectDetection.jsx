@@ -9,6 +9,7 @@ function ObjectDetection() {
   const [model, setModel] = useState(null);
   const [objects, setObjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [cameraMode, setCameraMode] = useState("user");
 
 
   // Load AI Model
@@ -48,7 +49,7 @@ function ObjectDetection() {
 
       const stream = await navigator.mediaDevices.getUserMedia({
         video: {
-          facingMode: "environment"
+          facingMode: cameraMode
         }
       });
 
@@ -177,6 +178,13 @@ function ObjectDetection() {
       <button onClick={detectObjects}>
         🔍 Detect Object
       </button>
+      <button onClick={() => setCameraMode("user")}>
+  🤳 Front Camera
+</button>
+
+<button onClick={() => setCameraMode("environment")}>
+  📷 Back Camera
+</button>
 
 
 
