@@ -1,16 +1,12 @@
-import "./index.css";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Features from "./components/Features";
-import Camera from "./components/Camera";
-
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <Hero />
-      <Features />
-      <Camera />
+    <div style={{padding: "40px", color: "white"}}>
+      <h1>Drishyam AI</h1>
+      <p>Offline Visual Assistant for Blind Users</p>
+
+      <button>Start Camera</button>
+      <button>Read Text</button>
+      <button>Voice Guide</button>
     </div>
   );
 }
