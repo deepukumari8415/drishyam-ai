@@ -150,3 +150,10 @@ footer {
   }
 
 }
+.hero span {
+  display: block;
+  max-width: 600px;
+  margin: 20px auto;
+  font-size: 18px;
+  color: #cbd5e1;
+}
