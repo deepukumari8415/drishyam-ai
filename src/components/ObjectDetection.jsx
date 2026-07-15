@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
+import "@tensorflow/tfjs";
 
 function ObjectDetection() {
 
@@ -10,44 +11,70 @@ function ObjectDetection() {
   const [loading, setLoading] = useState(true);
 
 
+  // Load AI Model
   useEffect(() => {
 
-    const loadAIModel = async () => {
-      const loadedModel = await cocoSsd.load();
+    const loadModel = async () => {
 
-      setModel(loadedModel);
-      setLoading(false);
+      try {
+
+        const loadedModel = await cocoSsd.load();
+
+        setModel(loadedModel);
+        setLoading(false);
+
+        console.log("AI Model Loaded");
+
+      } catch (error) {
+
+        console.log("Model Loading Error:", error);
+        setLoading(false);
+
+      }
+
     };
 
-    loadAIModel();
+
+    loadModel();
 
   }, []);
 
 
 
+  // Start Camera
   const startCamera = async () => {
 
-    const stream = await navigator.mediaDevices.getUserMedia({
-      video: {
-        facingMode: "environment"
-      }
-    });
+    try {
 
-    videoRef.current.srcObject = stream;
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: {
+          facingMode: "environment"
+        }
+      });
+
+
+      videoRef.current.srcObject = stream;
+
+    } catch(error) {
+
+      alert("Camera permission denied");
+
+    }
 
   };
 
 
 
+  // Detect Object
   const detectObjects = async () => {
 
-    if (!model) {
-      alert("AI model loading...");
+
+    if(!model){
+
+      alert("AI Model is still loading...");
       return;
+
     }
-
-
-    if (!videoRef.current) return;
 
 
     const predictions = await model.detect(
@@ -58,38 +85,48 @@ function ObjectDetection() {
     setObjects(predictions);
 
 
-    if (predictions.length > 0) {
 
-      const detected = predictions
-        .slice(0,3)
-        .map(obj => obj.class)
-        .join(", ");
+    if(predictions.length > 0){
+
+
+      const detectedObjects = predictions
+      .slice(0,3)
+      .map(item => item.class)
+      .join(", ");
+
 
 
       const speech = new SpeechSynthesisUtterance(
-        `${detected} detected`
+        `${detectedObjects} detected`
       );
 
 
       speech.lang = "en-US";
       speech.rate = 0.9;
 
+
       window.speechSynthesis.cancel();
       window.speechSynthesis.speak(speech);
+
 
     }
 
     else {
 
+
       const speech = new SpeechSynthesisUtterance(
         "No object detected"
       );
 
+
       window.speechSynthesis.speak(speech);
+
 
     }
 
+
   };
+
 
 
 
@@ -97,17 +134,25 @@ function ObjectDetection() {
 
     <section className="camera">
 
+
       <h2>
         👁️ AI Object Detection
       </h2>
 
 
+
       {
-        loading &&
-        <p>
-          Loading AI Model...
-        </p>
+        loading ? (
+          <p>
+            Loading AI Model...
+          </p>
+        ) : (
+          <p>
+            AI Model Ready ✅
+          </p>
+        )
       }
+
 
 
       <video
@@ -118,12 +163,15 @@ function ObjectDetection() {
       />
 
 
+
       <br />
+
 
 
       <button onClick={startCamera}>
         📷 Start Camera
       </button>
+
 
 
       <button onClick={detectObjects}>
@@ -148,6 +196,7 @@ function ObjectDetection() {
       </div>
 
 
+
     </section>
 
   );
@@ -155,4 +204,4 @@ function ObjectDetection() {
 }
 
 
-export default ObjectDetection; 
+export default ObjectDetection;
