@@ -1,72 +1,135 @@
 # 👁️ Drishyam AI
 
-## 🚀 Project Overview
+## Offline Visual Assistant for Blind Users
 
-Drishyam AI is an AI-powered accessibility platform designed to help visually impaired users understand their surroundings using smart web technologies.
+Drishyam AI is an AI-powered visual assistant designed to help visually impaired users understand their surroundings using camera-based assistance, OCR text reading, and voice guidance.
 
-The main goal of this project is to create a smart visual assistant that helps users through image understanding, text recognition, and voice-based guidance.
+The goal of this project is to provide an accessible solution that helps users detect objects, read text, and receive audio feedback.
 
-## ✨ Features
+---
 
-- 👁️ AI-based visual assistance
-- 📝 Text recognition from images
-- 🔊 Voice guidance support
-- 🌐 Simple and user-friendly interface
-- 📱 Responsive design
-- ⚡ Fast and accessible experience
+## 🚀 Features
+
+### 📷 Camera Assistance
+- Access device camera for real-time visual input
+- Supports front and back camera switching
+
+### 👁️ AI Object Detection
+- Detects objects using AI vision model
+- Provides object names with confidence score
+- Voice feedback for detected objects
+
+### 📖 OCR Text Reading
+- Extracts text from images
+- Converts detected text into understandable output
+
+### 🔊 Voice Guidance
+- Uses browser text-to-speech technology
+- Provides audio assistance for users
+
+### 📱 Responsive Design
+- Works on desktop and mobile browsers
+- Simple and accessible interface
+
+---
 
 ## 🛠️ Tech Stack
 
+- React.js
+- JavaScript
 - HTML5
 - CSS3
-- JavaScript
-- React.js
-- Vite
+- TensorFlow.js
+- COCO-SSD Object Detection Model
 - Web Speech API
-- Git & GitHub
+- Vite
+
+---
 
 ## 📂 Project Structure
 
-Drishyam-AI/ │ ├── src/ │   ├── components/ │   ├── pages/ │   ├── assets/ │   └── utils/ │ ├── public/ ├── package.json ├── vite.config.js └── README.md
+```
+Drishyam-AI/
+│
+├── src/
+│   ├── components/
+│   │   ├── Camera.jsx
+│   │   ├── OCR.jsx
+│   │   └── ObjectDetection.jsx
+│   │
+│   ├── App.jsx
+│   └── index.css
+│
+├── package.json
+└── README.md
+```
+
+---
 
 ## ⚙️ Installation & Setup
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/deepukumari8415/drishyam-ai.git
+git clone <your-repository-link>
+```
 
-Go to the project folder:
+Go to project folder:
 
-cd drishyam-ai
+```bash
+cd Drishyam-AI
+```
 
 Install dependencies:
 
+```bash
 npm install
+```
 
 Run the project:
 
+```bash
 npm run dev
+```
 
-🎯 Future Enhancements
+---
 
-Real-time object detection
+## 🎯 How It Works
 
-Improved AI vision capabilities
+```
+Camera Input
+      ↓
+AI Processing
+      ↓
+Object Detection / OCR
+      ↓
+Voice Feedback
+```
 
-Better voice assistance
+---
 
-Mobile application support
+## 🌟 Future Improvements
 
-More offline AI features
+- Real-time continuous object detection
+- Better accuracy with custom AI models
+- Offline AI model support
+- Navigation assistance
+- More languages for voice guidance
 
+---
 
-👩‍💻 Developer
+## 👩‍💻 Developer
 
-Deepu Kumari
+**Deepu Kumari**
 
-GitHub: https://github.com/deepukumari8415
+Computer Science Engineering Student
 
-📄 License
+---
 
-This project is created for learning, innovation, and accessibility purposes.
+## 📌 Project Purpose
+
+Built to explore AI, accessibility technology, and computer vision solutions for creating a more inclusive digital world.
+
+---
+
+⭐ If you like this project, consider giving it a star!
