@@ -1,16 +1,72 @@
-# React + Vite
+# 👁️ Drishyam AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Project Overview
 
-Currently, two official plugins are available:
+Drishyam AI is an AI-powered accessibility platform designed to help visually impaired users understand their surroundings using smart web technologies.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The main goal of this project is to create a smart visual assistant that helps users through image understanding, text recognition, and voice-based guidance.
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 👁️ AI-based visual assistance
+- 📝 Text recognition from images
+- 🔊 Voice guidance support
+- 🌐 Simple and user-friendly interface
+- 📱 Responsive design
+- ⚡ Fast and accessible experience
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- HTML5
+- CSS3
+- JavaScript
+- React.js
+- Vite
+- Web Speech API
+- Git & GitHub
+
+## 📂 Project Structure
+
+Drishyam-AI/ │ ├── src/ │   ├── components/ │   ├── pages/ │   ├── assets/ │   └── utils/ │ ├── public/ ├── package.json ├── vite.config.js └── README.md
+
+## ⚙️ Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/deepukumari8415/drishyam-ai.git
+
+Go to the project folder:
+
+cd drishyam-ai
+
+Install dependencies:
+
+npm install
+
+Run the project:
+
+npm run dev
+
+🎯 Future Enhancements
+
+Real-time object detection
+
+Improved AI vision capabilities
+
+Better voice assistance
+
+Mobile application support
+
+More offline AI features
+
+
+👩‍💻 Developer
+
+Deepu Kumari
+
+GitHub: https://github.com/deepukumari8415
+
+📄 License
+
+This project is created for learning, innovation, and accessibility purposes.
