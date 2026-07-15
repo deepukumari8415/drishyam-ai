@@ -79,9 +79,10 @@ function ObjectDetection() {
 
 
     const predictions = await model.detect(
-      videoRef.current
-    );
-
+  videoRef.current,
+  undefined,
+  0.3
+);
 
     setObjects(predictions);
 
@@ -157,11 +158,12 @@ function ObjectDetection() {
 
 
       <video
-        ref={videoRef}
-        autoPlay
-        playsInline
-        width="320"
-      />
+  ref={videoRef}
+  autoPlay
+  playsInline
+  muted
+  width="400"
+/>
 
 
 
